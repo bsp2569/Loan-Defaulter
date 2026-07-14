@@ -110,7 +110,7 @@ feature_names = X_train.columns.tolist()
 st.title("\U0001F4B3 Loan Default Prediction with Explainable AI")
 st.caption("Benchmarking SHAP vs. LIME agreement on individual loan default predictions")
 
-tab1, tab2, tab3 = st.tabs(["Explore a Prediction", "SHAP vs LIME Benchmark", "About This Project"])
+tab1, tab2 = st.tabs(["Explore a Prediction", "SHAP vs LIME Benchmark"])
 
 
 with tab1:
