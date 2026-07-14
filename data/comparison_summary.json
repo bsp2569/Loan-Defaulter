@@ -1,0 +1,24 @@
+{
+  "overall_mean_jaccard": 0.5294973544973545,
+  "borderline_mean_jaccard": 0.4113756613756614,
+  "confident_mean_jaccard": 0.6476190476190475,
+  "min_jaccard_case": {
+    "test_idx": 1777,
+    "predicted_proba": 0.5000313520431519,
+    "jaccard_similarity": 0.1111111111111111,
+    "shap_top_features": [
+      "credit.policy",
+      "days.with.cr.line",
+      "inq.last.6mths",
+      "log.annual.inc",
+      "fico"
+    ],
+    "lime_top_features": [
+      "int.rate",
+      "installment",
+      "days.with.cr.line",
+      "revol.util",
+      "pub.rec"
+    ]
+  }
+}

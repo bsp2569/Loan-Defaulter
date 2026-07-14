@@ -1,0 +1,22 @@
+{
+  "xgb_auc": 0.6548931802584405,
+  "rf_auc": 0.6597842348515982,
+  "n_train": 7662,
+  "n_test": 1916,
+  "default_rate": 0.16005429108373356,
+  "feature_cols": [
+    "credit.policy",
+    "purpose_encoded",
+    "int.rate",
+    "installment",
+    "log.annual.inc",
+    "dti",
+    "fico",
+    "days.with.cr.line",
+    "revol.bal",
+    "revol.util",
+    "inq.last.6mths",
+    "delinq.2yrs",
+    "pub.rec"
+  ]
+}
