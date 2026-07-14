@@ -112,7 +112,7 @@ st.caption("Benchmarking SHAP vs. LIME agreement on individual loan default pred
 
 tab1, tab2, tab3 = st.tabs(["Explore a Prediction", "SHAP vs LIME Benchmark", "About This Project"])
 
-# ---------------- TAB 1: Explore a Prediction ----------------
+
 with tab1:
     st.subheader("Pick a loan from the test set")
 
@@ -165,7 +165,7 @@ with tab1:
             st.success(f"**Jaccard similarity: {jaccard:.3f}** — SHAP and LIME largely agree "
                        f"on top contributing features.")
 
-# ---------------- TAB 2: Benchmark ----------------
+
 with tab2:
     st.subheader("Explanation agreement across 30 sampled test cases")
     st.write(
@@ -211,30 +211,3 @@ with tab2:
         use_container_width=True, hide_index=True
     )
 
-# ---------------- TAB 3: About ----------------
-with tab3:
-    st.subheader("About this project")
-    st.markdown(f"""
-    **Dataset:** LendingClub loan data (2007–2010), 9,578 loans, 14 features.
-    Target: whether a loan was not fully paid back (~16% default rate).
-
-    **Models:** XGBoost and Random Forest classifiers, trained on an 80/20 split
-    with class-imbalance handling.
-    - XGBoost test AUC: **{metrics['xgb_auc']:.3f}**
-    - Random Forest test AUC: **{metrics['rf_auc']:.3f}**
-
-    **Explainability comparison:** For 30 test cases (15 maximally-borderline
-    predictions near probability 0.5, 15 high-confidence predictions), this
-    project generates SHAP (`TreeExplainer`) and LIME
-    (`LimeTabularExplainer`) explanations, then measures agreement between
-    their top-5 contributing features using Jaccard similarity.
-
-    **Key finding:** explanation agreement is meaningfully lower for
-    borderline predictions (mean Jaccard {comparison_summary['borderline_mean_jaccard']:.2f})
-    than for confident ones ({comparison_summary['confident_mean_jaccard']:.2f}).
-    This is a concrete, reproducible caveat for any team relying on a single
-    explainability method to justify a high-stakes decision: **explanations
-    are least trustworthy exactly where the model itself is least certain.**
-
-    **Tech stack:** Python, scikit-learn, XGBoost, SHAP, LIME, pandas, Streamlit, Plotly
-    """)
